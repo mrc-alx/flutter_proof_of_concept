@@ -32,6 +32,7 @@ Future<void> main() async {
     await loginButton.click();
 
     Loginscreen loginscreen = Loginscreen(driver);
+    await loginscreen.init();
     await loginscreen.loginWithCredentials('username', 'password');
 
     final errorMessage = await driver.findElement(AppiumBy.accessibilityId('Your credentials are wrong. Please try again.'));
